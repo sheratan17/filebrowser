@@ -45,6 +45,13 @@
             :label="t('buttons.delete')"
             show="delete"
           />
+          <action
+            v-if="headerButtons.unzip"
+            id="unzip-button"
+            icon="unarchive"
+            :label="$t('buttons.unzip')"
+            show="unzip"
+          />
         </template>
 
         <action
@@ -114,6 +121,12 @@
         icon="delete"
         :label="t('buttons.delete')"
         show="delete"
+      />
+      <action
+        v-if="headerButtons.unzip"
+        icon="unarchive"
+        :label="$t('buttons.unzip')"
+        show="unzip"
       />
     </div>
 
@@ -412,6 +425,10 @@ const headerButtons = computed(() => {
     share: fileStore.selectedCount === 1 && authStore.user?.perm.share,
     move: fileStore.selectedCount > 0 && authStore.user?.perm.rename,
     copy: fileStore.selectedCount > 0 && authStore.user?.perm.create,
+    unzip:
+      fileStore.selectedCount === 1 &&
+      isArchive(fileStore.req?.items[fileStore.selected[0]].extension || "") &&
+      authStore.user?.perm.unzip,
   };
 });
 

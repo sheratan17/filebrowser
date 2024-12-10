@@ -13,6 +13,7 @@ require (
 	github.com/gorilla/websocket v1.5.3
 	github.com/maruel/natural v1.1.1
 	github.com/marusama/semaphore/v2 v2.5.0
+	github.com/mholt/archiver v3.1.1+incompatible
 	github.com/mholt/archiver/v3 v3.5.1
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/pelletier/go-toml/v2 v2.2.3
@@ -30,6 +31,8 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gopkg.in/yaml.v2 v2.4.0
 )
+
+require github.com/pierrec/lz4 v2.6.1+incompatible // indirect
 
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect

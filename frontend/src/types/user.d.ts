@@ -45,6 +45,7 @@ interface Permissions {
   share: boolean;
   shell: boolean;
   upload: boolean;
+  unzip: boolean;
 }
 
 interface Sorting {
